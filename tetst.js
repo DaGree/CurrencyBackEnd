@@ -56,7 +56,6 @@ function currency(date,fromCurrency,toCurrency,callback, apiKey){
     var query = fromCurrency + '_' + toCurrency;
     //var url = 'https://free.currconv.com/api/v7/convert?q=' + query + '&compact=ultra&apiKey=' + apiKey;    
     var url = 'https://free.currconv.com/api/v7/convert?q=' + query + '&compact=ultra&date=' + date + '&apiKey=' + apiKey;
-    //'https://free.currconv.com/api/v7/convert?q=USD_RUB&compact=ultra&date=2022-03-10&apiKey=f02c0230cf450ec84df5'
     https.get(url, function(res){
         var body = '';
   
