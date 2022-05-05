@@ -8,12 +8,26 @@ const connection = mysql.createConnection({             //объявление �
     user: 'root',
     database: 'tst1',
     password: process.env.DB_PASSWORD
-  });
-  connection.connect(function(err){                            //подключение к БД
-      if (err) {
+});
+
+function create_connection(){
+    connection.connect(function(err){                            //подключение к БД
+        if (err) {
             return console.error("Ошибка: " + err.message);
-      }
-      else{
-           console.log("Подключение к серверу MySQL успешно установлено");
-         }
-  }); 
+        }
+        else{
+            console.log("Подключение к серверу MySQL успешно установлено");
+        }
+    }); 
+};
+
+const request_sql='SELECT * FROM currencylist'
+
+function request_to_DB(request_sql){
+    connection.query(request_sql, function(err,results){
+        console.log(results)
+    });
+};
+
+create_connection();
+request_to_DB(request_sql);
