@@ -22,12 +22,13 @@ function create_connection(){
 };
 
 const request_sql='SELECT * FROM currencylist'
+const request_usd='SELECT USD FROM currencylist WHERE IKey=1';
 
 function request_to_DB(request_sql){
     connection.query(request_sql, function(err,results){
-        console.log(results)
+        console.log(results[0].USD)
     });
 };
 
 create_connection();
-request_to_DB(request_sql);
+request_to_DB(request_usd);
