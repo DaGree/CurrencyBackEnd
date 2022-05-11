@@ -29,6 +29,6 @@ function request_to_DB(request_sql){
         console.log(results[0].USD)
     });
 };
-
+//test git hub
 create_connection();
-request_to_DB(request_usd);
+request_to_DB(request_sql);
